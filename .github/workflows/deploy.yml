@@ -21,8 +21,10 @@ jobs:
           cwd: "./"
           files: ./
           outPath: deploy.tar
-      - name: send to server
-        uses: caprover/deploy-from-github@main
+      - name: Ls files
+        run: ls -la
+      - name: Deploy App to CapRover
+        uses: caprover/deploy-from-github@v1.1.2
         with:
           server: "${{ secrets.CAPROVER_SERVER }}"
           app: "${{ secrets.WEB_APP_NAME }}"
