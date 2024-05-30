@@ -1,13 +1,14 @@
-name: deploy
+name: Deploy
 on:
   workflow_dispatch:
   push:
     branches:
       - main
+
 jobs:
   deploy:
-    name: build and deploy
-    runs-on: ubuntu-24.04
+    name: Build & deplo
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -20,6 +21,12 @@ jobs:
           command: c
           files: ./
           outPath: ./deploy.tar
+
+      - name: List files
+        run: ls -l
+
+      - name: PWD
+        run: pwd
 
       - name: Deploy the tar to caprover
         uses: caprover/deploy-from-github@main
