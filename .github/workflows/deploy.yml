@@ -20,7 +20,7 @@ jobs:
           command: c
           cwd: ./
           files: ./
-          outPath: deploy.tar.gz
+          outPath: deploy.tar
       - name: send to server
         uses: caprover/deploy-from-github@main
         with:
