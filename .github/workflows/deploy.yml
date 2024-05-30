@@ -18,7 +18,6 @@ jobs:
         uses: a7ul/tar-action@v1.1.0
         with:
           command: c
-          cwd: './'
           files: ./
           outPath: ./deploy.tar
 
