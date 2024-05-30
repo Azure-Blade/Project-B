@@ -1,0 +1,29 @@
+name: deploy
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    name: build and deploy
+    runs-on: ubuntu-24.04
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - name: Compress action step
+        uses: a7ul/tar-action@v1.1.0
+        id: compress
+        with:
+          command: c
+          cwd: ./
+          files: ./
+          outPath: deploy.tar.gz
+      - name: send to server
+        uses: caprover/deploy-from-github@main
+        with:
+          server: "${{ secrets.CAPROVER_SERVER }}"
+          app: "${{ secrets.WEB_APP_NAME }}"
+          token: "${{ secrets.WEB_APP_TOKEN }}"
