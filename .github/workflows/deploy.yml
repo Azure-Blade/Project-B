@@ -22,12 +22,6 @@ jobs:
           files: ./
           outPath: ./deploy.tar
 
-      - name: List files
-        run: ls -l
-
-      - name: PWD
-        run: pwd
-
       - name: Deploy the tar to caprover
         uses: caprover/deploy-from-github@main
         with:
