@@ -18,7 +18,7 @@ jobs:
         id: compress
         with:
           command: c
-          cwd: ./
+          cwd: "./"
           files: ./
           outPath: deploy.tar
       - name: send to server
