@@ -13,19 +13,19 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
+
       - name: Compress action step
         uses: a7ul/tar-action@v1.1.0
         id: compress
         with:
           command: c
-          cwd: "./"
+          cwd: './'
           files: ./
-          outPath: deploy.tar
-      - name: Ls files
-        run: ls -la
+          outPath: ./deploy.tar
+
       - name: Deploy App to CapRover
         uses: caprover/deploy-from-github@v1.1.2
         with:
-          server: "${{ secrets.CAPROVER_SERVER }}"
-          app: "${{ secrets.WEB_APP_NAME }}"
-          token: "${{ secrets.WEB_APP_TOKEN }}"
+          server: '${{ secrets.CAPROVER_SERVER }}'
+          app: '${{ secrets.WEB_APP_NAME }}'
+          token: '${{ secrets.WEB_APP_TOKEN }}'
