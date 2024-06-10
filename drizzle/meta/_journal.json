@@ -1,0 +1,41 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1717527060364,
+      "tag": "0000_massive_abomination",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1717848387054,
+      "tag": "0001_soft_outlaw_kid",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1718021688063,
+      "tag": "0002_chunky_snowbird",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1718023355754,
+      "tag": "0003_broad_kulan_gath",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1718026902741,
+      "tag": "0004_thin_redwing",
+      "breakpoints": true
+    }
+  ]
+}

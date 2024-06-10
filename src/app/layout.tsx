@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import React from "react";
+import Header from "@/components/Header";
+import { db } from "@/db_connection";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,8 +18,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" data-theme="dracula">
+      <body
+        className={inter.className + " flex flex-col bg-base-300"}
+      >
+        <Header />
+        <main className="flex flex-1 flex-col min-h-[calc(100svh-4rem)] container mx-auto items-center">{children}</main>
+      </body>
     </html>
   );
 }
