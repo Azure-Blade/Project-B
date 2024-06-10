@@ -1,31 +1,30 @@
-name: deploy
+name: Deploy
 on:
   workflow_dispatch:
   push:
     branches:
       - main
+
 jobs:
   deploy:
-    name: build and deploy
+    name: Build & deplo
     runs-on: ubuntu-24.04
     steps:
-      - name: checkout
+      - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
-      - name: Compress action step
+
+      - name: Compress
         uses: a7ul/tar-action@v1.1.0
-        id: compress
         with:
           command: c
-          cwd: "./"
           files: ./
-          outPath: deploy.tar
-      - name: Ls files
-        run: ls -la
-      - name: Deploy App to CapRover
-        uses: caprover/deploy-from-github@v1.1.2
+          outPath: ./deploy.tar
+
+      - name: Deploy the tar to caprover
+        uses: caprover/deploy-from-github@main
         with:
-          server: "${{ secrets.CAPROVER_SERVER }}"
-          app: "${{ secrets.WEB_APP_NAME }}"
-          token: "${{ secrets.WEB_APP_TOKEN }}"
+          server: '${{ secrets.CAPROVER_SERVER }}'
+          app: '${{ secrets.APP_NAME }}'
+          token: '${{ secrets.APP_TOKEN }}'
