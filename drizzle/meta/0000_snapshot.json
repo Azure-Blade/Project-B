@@ -34,9 +34,7 @@
       "compositePrimaryKeys": {
         "blogs_id": {
           "name": "blogs_id",
-          "columns": [
-            "id"
-          ]
+          "columns": ["id"]
         }
       },
       "uniqueConstraints": {}

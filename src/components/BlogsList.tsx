@@ -1,14 +1,14 @@
-import React from "react";
-import { Blog } from "../schema";
+import React from 'react';
+import { Blog } from '../schema';
 
 type Props = {
-   blogsthatcomponentexcpects:Blog[]
-}
+  blogsthatcomponentexcpects: Blog[];
+};
 
-export default function BlogsList({blogsthatcomponentexcpects}:Props) {
+export default function BlogsList({ blogsthatcomponentexcpects }: Props) {
   return (
     <div>
-      {blogsthatcomponentexcpects.map((blog) => {
+      {blogsthatcomponentexcpects.map(blog => {
         return (
           <li>
             <a href={`/blogs/${blog.title}`}>{blog.title}</a>

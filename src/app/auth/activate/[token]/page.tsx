@@ -1,5 +1,5 @@
-import { db } from "@/db_connection";
-import * as schema from "@/schema";
+import { db } from '@/db_connection';
+import * as schema from '@/schema';
 
 type Props = {
   params: {
@@ -9,7 +9,7 @@ type Props = {
 
 export default async function Page(props: Props) {
   const user = await db.query.user.findFirst({
-    where: (user, { eq }) => eq(user.activationToken, props.params.token),
+    where: (user, { eq }) => eq(user.activationToken, props.params.token)
   });
 
   if (!user) {
@@ -22,7 +22,7 @@ export default async function Page(props: Props) {
 
   await db.update(schema.user).set({
     activationToken: null,
-    verified: true,
+    verified: true
   });
 
   return (
