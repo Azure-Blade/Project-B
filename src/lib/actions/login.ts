@@ -57,7 +57,7 @@ export async function login(prevState: any, formData: FormData) {
   });
 
   const now = new Date().getTime();
-  const expires = now + 1000 * 30 * 60;
+  const expires = now + 1000 * 30;
   cookies().set('session', token, { expires });
 
   redirect('/');
