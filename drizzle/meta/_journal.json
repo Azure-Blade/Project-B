@@ -36,6 +36,20 @@
       "when": 1718026902741,
       "tag": "0004_thin_redwing",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "5",
+      "when": 1718107769018,
+      "tag": "0005_chemical_phantom_reporter",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "5",
+      "when": 1718108211555,
+      "tag": "0006_perpetual_alex_power",
+      "breakpoints": true
     }
   ]
 }

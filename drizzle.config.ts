@@ -1,3 +1,4 @@
+import { env } from '@/env';
 import { defineConfig } from 'drizzle-kit';
 
 export default defineConfig({
@@ -5,8 +6,9 @@ export default defineConfig({
   out: './drizzle',
   dialect: 'mysql',
   dbCredentials: {
-    host: "localhost",
-    user: "root",
-    database: "projectb",
-  },
+    host: env.DB_HOST,
+    user: env.DB_USER,
+    database: env.DB_DATABASE,
+    password: env.DB_PASSWORD
+  }
 });
